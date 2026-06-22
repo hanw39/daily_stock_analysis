@@ -455,7 +455,10 @@ jobs:
           echo "  Slack: $(([ -n "$SLACK_WEBHOOK_URL" ] || ([ -n "$SLACK_BOT_TOKEN" ] && [ -n "$SLACK_CHANNEL_ID" ])) && echo '✅ 已配置' || echo '⚪ 未配置')"
           echo "=========================================="
           echo ""
-          
+          echo "【自选股票】"
+          echo "  stockList: $([ -n "$STOCK_LIST" ] && echo '✅ 已配置' || echo '⚪ 未配置')"
+        
+          echo "=========================================="
           # 构建命令行参数
           FORCE_RUN_ARG=""
           if [ "${{ github.event.inputs.force_run }}" = "true" ]; then
